@@ -30,6 +30,10 @@ body {
 .accordion {
   width: 700px;
   margin: 100px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .item {
@@ -37,14 +41,21 @@ body {
   padding: 24px;
 
   display: grid;
-  grid-template-columns: ;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: center;
 }
 
 .number,
 .text {
   font-size: 24px;
   font-weight: 500;
-  color: #087f5b;
+  /* color: #087f5b; */
+}
+
+.number {
+  color: #adb1b6;
 }
 .text {
 }
@@ -56,6 +67,8 @@ body {
 }
 
 .hidden-box {
+  grid-column: 2;
+  display: none;
 }
 
 .hidden-box p {
@@ -70,4 +83,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+.open .hidden-box {
+  display: block;
+}
+
+.open .number,
+.open .text {
+  color: #087f5b;
 }
